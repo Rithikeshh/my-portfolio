@@ -1,0 +1,14 @@
+.aboutContainer{
+    padding-inline: 24px;
+}
+.aboutContentAndImageContainer{
+    display: flex;
+    padding: 3rem 0;
+    gap: 1rem;
+}
+
+@media only screen and (min-width: 1320px) {
+    .aboutContainer{
+        padding-inline: 5rem;
+    }
+}

@@ -1,0 +1,36 @@
+.trailsText {
+    position: relative;
+    width: 100%;
+    color: black;
+    font-size: 1em;
+    will-change: transform, opacity;
+    overflow: hidden;
+}
+
+.trailsText > div {
+    padding-right: 0.05em;
+    overflow: hidden;
+}
+  
+.container {
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-inline: 24px;
+    max-width: 800px;
+
+}
+.imagesContainer{
+    display: flex;
+    gap: 2.5rem;
+    position: absolute;
+    top: 0;
+    left: -330px;
+}
+@media only screen and (min-width: 1320px) {
+    .container{
+        padding-inline-start: 5rem;
+    }
+}
+  
