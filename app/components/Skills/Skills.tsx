@@ -44,7 +44,7 @@ function Skills() {
         <div className='flex flex-wrap gap-y-8 py-8 '>
             {
                 images.map((item, index) =>(
-                    <div key={index} className='w-[33.33%] flex items-center gap-4 hover:rotate-3'>
+                    <div key={index} className='w-[33.33%] flex items-center gap-4 hover:rotate-3 duration-300'>
                         <Image 
                             src={item.picture}
                             alt={item.title}

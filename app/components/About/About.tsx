@@ -41,7 +41,7 @@ function About() {
                     alt=''
                     style={{objectFit: 'cover'}}
 
-                    className='rounded-[24px] w-[400px] max-h-[400px] shadow-lg -rotate-2'
+                    className='rounded-[24px] w-[400px] max-h-[400px] shadow-lg -rotate-2 duration-300 ease-in hover:rotate-0'
                 />
             </div>
         </div>
