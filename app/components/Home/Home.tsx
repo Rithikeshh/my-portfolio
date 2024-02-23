@@ -59,7 +59,7 @@ function Home() {
         </div>
         
         <Trail open={open}>
-            <span>A full-stack web developer with a strong passion for creating websites and web applications that are user-friendly and engaging. I'm always eager to learn new things and stay updated with the latest trends.</span>
+            <span>A full-stack web developer with a strong passion for creating websites and web applications that are user-friendly and engaging. I&apos;m always eager to learn new things and stay updated with the latest trends.</span>
             
         </Trail>
         <div data-aos="fade-up" className='flex gap-4 mt-2'>
