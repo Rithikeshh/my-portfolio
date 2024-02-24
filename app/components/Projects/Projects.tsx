@@ -276,7 +276,7 @@ function MiniProjectsModal() {
        
       </div>
       <Modal backdrop={'blur'} isOpen={isOpen} onClose={onClose}>
-        <ModalContent className='bg-black w-[100vw] h-[100vh]'>
+        <ModalContent className='bg-black'>
           {(onClose) => (
             <>
               <CardsStack/>
