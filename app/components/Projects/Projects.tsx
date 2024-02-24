@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import styles from './Projects.module.css'
 import mmt from '../../assets/images/mmt.png'
 import linkedin from '../../assets/images/linkedin.png'
@@ -99,6 +99,14 @@ const miniProjects = [
     liveUrl: 'https://rithikeshh.github.io/Todo-list/'
   },
 ]
+const animation = [
+  "zoom-out-right",
+  "zoom-out-down",
+  "zoom-out-left",
+  "zoom-in-right",
+  "zoom-in-up",
+  "zoom-in-left"
+]
 function Projects() {
   
   return (
@@ -117,13 +125,14 @@ function Projects() {
           <div className='flex justify-around flex-wrap gap-6'>
             {
               allProjects.map((project, index)=>(
-                <CardContainer key={index} project={project}/>
+                <CardContainer dataAos={animation[index]} key={index} project={project}/>
               ))
             }
             <Card 
               className="py-4 w-[300px] bg-[#252529] h-[260px]"
               isFooterBlurred
               radius="lg"
+              data-aos={animation[5]}
             >
               <CardHeader className="pb-0 pt-2 px-4 flex-col items-start z-[0]">
                 <p className="text-large font-bold text-[rgba(255,255,255,.9)]">Mini Projects</p>
@@ -145,27 +154,8 @@ function Projects() {
                 }
                 
               </div>
-              <CardFooter className="justify-center cursor-pointer before:bg-white/10 border-white/20 border-1 overflow-hidden py-[10px] absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_16px)] mx-[8px] shadow-small  z-10">
+              <CardFooter className="justify-center cursor-pointer before:bg-white/10 border-white/20 border-1 overflow-hidden p-0 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_16px)] mx-[8px] shadow-small  z-10">
                <MiniProjectsModal/>
-                {/* <p className="text-small text-[#2BB6A5] flex items-center">
-                  Click me
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
-                    <path fillRule="evenodd" d="M2 10a.75.75 0 0 1 .75-.75h12.59l-2.1-1.95a.75.75 0 1 1 1.02-1.1l3.5 3.25a.75.75 0 0 1 0 1.1l-3.5 3.25a.75.75 0 1 1-1.02-1.1l2.1-1.95H2.75A.75.75 0 0 1 2 10Z" clipRule="evenodd" />
-                  </svg>
-
-                </p> */}
-                {/* <Button className="text-tiny text-white bg-black/20" variant="flat" color="default" radius="lg" size="sm">
-                  <a href='' target='_blank'>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4 text-[#2BB6A5]">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-                    </svg>
-                  </a>
-                  <a href='' target='_blank'>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 text-[#C3831D]">
-                      <path fillRule="evenodd" d="M6.28 5.22a.75.75 0 0 1 0 1.06L2.56 10l3.72 3.72a.75.75 0 0 1-1.06 1.06L.97 10.53a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Zm7.44 0a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L17.44 10l-3.72-3.72a.75.75 0 0 1 0-1.06ZM11.377 2.011a.75.75 0 0 1 .612.867l-2.5 14.5a.75.75 0 0 1-1.478-.255l2.5-14.5a.75.75 0 0 1 .866-.612Z" clipRule="evenodd" />
-                    </svg>
-                  </a>
-                </Button> */}
               </CardFooter>
             </Card>
             
@@ -186,14 +176,14 @@ const CardContainer: React.FC<{project: {
   githubUrl: string,
   techUsed: string,
   features: string[]
-}}> = ({project}) =>{
+}, dataAos: string}> = ({project, dataAos}) =>{
   
   const [show, setShow] = useState<boolean>(false)
   return(
     <div 
       className='relative overflow-hidden w-[300px] rounded-xl'
       onMouseLeave={() => {setShow(false)}}
-      
+      data-aos={dataAos}
     >
       <Card 
         className="py-4 w-[300px] bg-[#252529] h-[260px]"
@@ -264,12 +254,12 @@ function MiniProjectsModal() {
   
   return (
     <>
-      <div className="flex flex-wrap gap-3">
+      <div className="flex flex-grow">
         
           <Button  
             variant="flat" 
             onPress={() => handleOpen()}
-            className="capitalize bg-transparent text-[#2BB6A5] p-0 h-[100%]"
+            className="capitalize bg-transparent text-[#2BB6A5] p-0 h-[100%] w-[100%] p-[10px]"
           >
            Click me
           </Button>
@@ -280,34 +270,6 @@ function MiniProjectsModal() {
           {(onClose) => (
             <>
               <CardsStack/>
-              {/* <ModalHeader className="flex flex-col gap-1">Modal Title</ModalHeader>
-              <ModalBody>
-                <p> 
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non risus hendrerit venenatis.
-                  Pellentesque sit amet hendrerit risus, sed porttitor quam.
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non risus hendrerit venenatis.
-                  Pellentesque sit amet hendrerit risus, sed porttitor quam.
-                </p>
-                <p>
-                  Magna exercitation reprehenderit magna aute tempor cupidatat consequat elit
-                  dolor adipisicing. Mollit dolor eiusmod sunt ex incididunt cillum quis. 
-                  Velit duis sit officia eiusmod Lorem aliqua enim laboris do dolor eiusmod. 
-                  Et mollit incididunt nisi consectetur esse laborum eiusmod pariatur 
-                  proident Lorem eiusmod et. Culpa deserunt nostrud ad veniam.
-                </p>
-              </ModalBody>
-              <ModalFooter>
-                <Button color="danger" variant="light" onPress={onClose}>
-                  Close
-                </Button>
-                <Button color="primary" onPress={onClose}>
-                  Action
-                </Button>
-              </ModalFooter> */}
             </>
           )}
         </ModalContent>
