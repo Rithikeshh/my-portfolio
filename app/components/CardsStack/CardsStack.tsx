@@ -1,7 +1,11 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useSprings, animated, to as interpolate } from '@react-spring/web'
 import { useDrag } from 'react-use-gesture'
+import moviedeck from '../../assets/images/Screenshot 2024-02-24 183551.png'
+import pokemon from '../../assets/images/pokemon.png'
+import weather from '../../assets/images/weather.png'
+import todo from '../../assets/images/todo.png'
 
 import styles from './CardsStack.module.css'
 
@@ -13,7 +17,28 @@ const cards = [
   'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/RWS_Tarot_02_High_Priestess.jpg/690px-RWS_Tarot_02_High_Priestess.jpg',
   'https://upload.wikimedia.org/wikipedia/commons/d/de/RWS_Tarot_01_Magician.jpg',
 ]
-
+const miniProjects = [
+    {
+      name: 'Pokemon World',
+      image: pokemon.src, // url of image because Avatar doesn't support src as object.
+      liveUrl: 'https://rithikeshh.github.io/Pokemon-world/'
+    },
+    {
+      name: 'Movie Deck',
+      image: moviedeck.src, // url of image because Avatar doesn't support src as object.
+      liveUrl: 'https://rithikeshh.github.io/Movie-Deck-Project-Buidling---JS-Project-Building-Session-HTML-CSS---In-Cla---kj07fu39n86e/'
+    },
+    {
+      name: 'Weather App',
+      image: weather.src, // url of image because Avatar doesn't support src as object.
+      liveUrl: 'https://rithikeshh.github.io/weather-app/'
+    },
+    {
+      name: 'Todo List',
+      image: todo.src, // url of image because Avatar doesn't support src as object.
+      liveUrl: 'https://rithikeshh.github.io/Todo-list/'
+    },
+  ]
 // These two are just helpers, they curate spring data, values that are later being interpolated into css
 const to = (i: number) => ({
   x: 0,
@@ -30,7 +55,7 @@ const trans = (r: number, s: number) =>
 function Deck() {
     
   const [gone] = useState(() => new Set()) // The set flags all the cards that are flicked out
-  const [props, api] = useSprings(cards.length, i => ({
+  const [props, api] = useSprings(miniProjects.length, i => ({
     ...to(i),
     from: from(i),
   })) // Create a bunch of springs using the helpers above
@@ -42,7 +67,7 @@ function Deck() {
     api.start(i => {
       if (index !== i) return // We're only interested in changing spring-data for the current spring
       const isGone = gone.has(index)
-      const x = isGone ? (200 + window.innerWidth) * dir : down ? mx : 0 // When a card is gone it flys out left or right, otherwise goes back to zero
+      const x = isGone ? (400) * dir : down ? mx : 0 // When a card is gone it flys out left or right, otherwise goes back to zero
       const rot = mx / 100 + (isGone ? dir * 10 * velocity : 0) // How much the card tilts, flicking it harder makes it rotate faster
       const scale = down ? 1.1 : 1 // Active cards lift up a bit
       return {
@@ -53,7 +78,7 @@ function Deck() {
         config: { friction: 50, tension: down ? 800 : isGone ? 200 : 500 },
       }
     })
-    if (!down && gone.size === cards.length)
+    if (!down && gone.size === miniProjects.length)
       setTimeout(() => {
         gone.clear()
         api.start(i => to(i))
@@ -70,9 +95,27 @@ function Deck() {
             {...bind(i)}
             style={{
               transform: interpolate([rot, scale], trans),
-              backgroundImage: `url(${cards[i]})`,
+              backgroundImage: `url(${miniProjects[i].image})`,
             }}
           />
+          <p className={styles.title}>
+            <span>{miniProjects[i].name}</span>
+            <a href={miniProjects[i].liveUrl}>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className={styles.svg}>
+                    <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                    />
+                </svg>
+            </a>
+          </p>
         </animated.div>
       ))}
     </>
