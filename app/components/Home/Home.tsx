@@ -33,12 +33,11 @@ const Trail: React.FC<{ open: number, children: React.ReactNode }> = ({ open, ch
   }
 
 function Home() {
-    const [open, set] = useState(1)
+    
     useEffect(()=>{
-        set(2)
         Aos.init({
-          // once: true,
-          duration: 800
+          once: true,
+          duration: 1200
         })
     },[])
   return (
@@ -53,15 +52,15 @@ function Home() {
             />
         </div>
         <div className='mt-6 mb-8'>
-            <p data-aos="fade-down" className='font-bold text-4xl text-[rgba(255,255,255,.9)]'>
+            <p data-aos="fade-down" className='font-bold text-4xl max-[860px]:text-3xl max-[540px]:text-2xl text-[rgba(255,255,255,.9)]'>
                 Frontend developer, fullstack developer , backend developer and amature debugger.
             </p>
         </div>
         
-        <Trail open={open}>
+        <div data-aos="fade-left" className='text-[rgba(255,255,255,.6)]'>
             <span>A full-stack web developer with a strong passion for creating websites and web applications that are user-friendly and engaging. I&apos;m always eager to learn new things and stay updated with the latest trends.</span>
             
-        </Trail>
+        </div>
         <div data-aos="fade-up" className='flex gap-4 mt-2'>
             <a href='#'>
             <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6 fill-zinc-500 transition hover:fill-zinc-600 dark:fill-zinc-400 dark:hover:fill-zinc-300"><path d="M13.3174 10.7749L19.1457 4H17.7646L12.7039 9.88256L8.66193 4H4L10.1122 12.8955L4 20H5.38119L10.7254 13.7878L14.994 20H19.656L13.3171 10.7749H13.3174ZM11.4257 12.9738L10.8064 12.0881L5.87886 5.03974H8.00029L11.9769 10.728L12.5962 11.6137L17.7652 19.0075H15.6438L11.4257 12.9742V12.9738Z"></path></svg>
@@ -76,7 +75,7 @@ function Home() {
             <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6 fill-zinc-500 transition hover:fill-zinc-600 dark:fill-zinc-400 dark:hover:fill-zinc-300"><path d="M18.335 18.339H15.67v-4.177c0-.996-.02-2.278-1.39-2.278-1.389 0-1.601 1.084-1.601 2.205v4.25h-2.666V9.75h2.56v1.17h.035c.358-.674 1.228-1.387 2.528-1.387 2.7 0 3.2 1.778 3.2 4.091v4.715zM7.003 8.575a1.546 1.546 0 01-1.548-1.549 1.548 1.548 0 111.547 1.549zm1.336 9.764H5.666V9.75H8.34v8.589zM19.67 3H4.329C3.593 3 3 3.58 3 4.297v15.406C3 20.42 3.594 21 4.328 21h15.338C20.4 21 21 20.42 21 19.703V4.297C21 3.58 20.4 3 19.666 3h.003z"></path></svg>
             </a>
         </div>
-        <div className='relative mt-14 h-[360px]'>
+        <div className='relative mt-14 h-[360px] max-[1000px]:h-[240px]'>
             <div data-aos="flip-up" className={styles.imagesContainer}>
                 <Image 
                     src={image1}
@@ -84,7 +83,7 @@ function Home() {
                     width={300}
                     height={320}
                     style={{borderRadius: '16px', objectFit: 'cover'}}
-                    className='rotate-2 origin-top-left '
+                    className='rotate-2 origin-top-left aspect-square max-[1000px]:w-[190px]'
                 />
                 <Image 
                     src={image2}
@@ -92,7 +91,7 @@ function Home() {
                     width={300}
                     height={320}
                     style={{borderRadius: '16px'}}
-                    className='-rotate-2 origin-bottom '
+                    className='-rotate-2 origin-bottom aspect-square max-[1000px]:w-[190px]'
                 />
                 <Image 
                     src={image3}
@@ -100,7 +99,7 @@ function Home() {
                     width={300}
                     height={320}
                     style={{borderRadius: '16px', objectFit: 'cover'}}
-                    className='rotate-1 origin-top-left '
+                    className='rotate-1 origin-top-left aspect-square max-[1000px]:w-[190px]'
                 />
                 <Image 
                     src={image4}
@@ -108,7 +107,7 @@ function Home() {
                     width={300}
                     height={320}
                     style={{borderRadius: '16px', objectFit: 'cover'}}
-                    className='rotate-2 origin-top-left '
+                    className='rotate-2 origin-top-left aspect-square max-[1000px]:w-[190px]'
                 />
                 <Image 
                     src={image5}
@@ -116,7 +115,7 @@ function Home() {
                     width={300}
                     height={320}
                     style={{borderRadius: '16px', objectFit: 'cover'}}
-                    className='-rotate-1 origin-bottom max-h-[300px]'
+                    className='-rotate-1 origin-bottom aspect-square max-[1000px]:w-[190px]'
                 />
             </div>
         </div>

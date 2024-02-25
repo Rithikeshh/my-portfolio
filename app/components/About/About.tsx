@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect } from 'react'
+import React from 'react'
 import styles from './About.module.css'
 import profileImage from '../../assets/images/profileImage.jpeg'
 import Aos from "aos";
@@ -7,9 +7,7 @@ import "aos/dist/aos.css"
 import Image from 'next/image';
 
 function About() {
-    useEffect(() =>{
-        Aos.init({duration: 600})
-    },[])
+    
   return (
     <div className={styles.aboutContainer}>
         <h1 className='flex p-4 justify-center text-4xl font-bold text-[rgba(255,255,255,.9)]'>
@@ -21,7 +19,7 @@ function About() {
         </h1>
         <div className={styles.aboutContentAndImageContainer}>
 
-            <div data-aos="zoom-in-up" className='w-[52%]'>
+            <div data-aos="zoom-in-up" className='w-[54%] max-[1020px]:w-[100%]'>
                 <h2 className='text-3xl font-bold text-[rgba(255,255,255,.8)]'>
                     I’m Alok Shaw. I live in Kolkata, where I design the future.
                 </h2>
@@ -35,14 +33,16 @@ function About() {
                 I have completed a Bachelor of Science degree from the University of Calcutta with a CGPA of 7.93. My graduation year was 2023.
                 </p>
             </div>
-            <div className='w-[48%] flex justify-end'>
-                <Image
-                    src={profileImage}
-                    alt=''
-                    style={{objectFit: 'cover'}}
+            <div className='w-[46%] max-[1020px]:w-[100%] max-[1020px]:pl-0 max-[1020px]:pb-10 pl-14 flex justify-end max-[1020px]:justify-start'>
+                <div>
+                    <Image
+                        src={profileImage}
+                        alt=''
+                        style={{objectFit: 'cover'}}
 
-                    className='rounded-[24px] w-[400px] max-h-[400px] shadow-lg -rotate-2 duration-300 ease-in hover:rotate-0'
-                />
+                        className='rounded-[24px] w-[400px] max-[1020px]:w-[300px] aspect-square max-h-[400px] shadow-lg -rotate-2  duration-300 ease-in hover:rotate-0'
+                    />
+                </div>
             </div>
         </div>
     </div>

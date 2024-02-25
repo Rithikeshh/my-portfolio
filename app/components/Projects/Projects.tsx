@@ -121,7 +121,7 @@ function Projects() {
             <span data-aos="fade-down">t</span>
             <span data-aos="fade-up">s</span>
         </h1>
-        <div className='mt-20'>
+        <div className='mt-14'>
           <div className='flex justify-around flex-wrap gap-6'>
             {
               allProjects.map((project, index)=>(

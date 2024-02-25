@@ -25,12 +25,34 @@
     display: flex;
     gap: 2.5rem;
     position: absolute;
+    /* width: calc(100vw + 330px);
+    overflow: hidden; */
     top: 0;
     left: -330px;
 }
 @media only screen and (min-width: 1320px) {
     .container{
         padding-inline-start: 5rem;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .imagesContainer{
+        left: -200px;
+    }
+}
+@media only screen and (max-width: 790px) {
+    .imagesContainer{
+        left: -280px;
+    }
+}
+@media only screen and (max-width: 680px) {
+    .imagesContainer{
+        left: -320px;
+    }
+}
+@media only screen and (max-width: 490px) {
+    .imagesContainer{
+        left: -370px;
     }
 }
   

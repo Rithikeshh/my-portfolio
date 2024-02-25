@@ -12,3 +12,8 @@
         padding-inline: 5rem;
     }
 }
+@media only screen and (max-width: 1020px) {
+    .aboutContentAndImageContainer{
+        flex-direction: column-reverse;
+    }
+}

@@ -1,5 +1,5 @@
 .projectsContainer{
-    margin-top: 2rem;
+    margin-top: 1rem;
     padding-inline: 24px;
 }
 .hoverEffect{
@@ -13,7 +13,6 @@
     background-color: rgba(0 0 0/.6);
     padding-inline: 0.75rem;
     padding-top: 0.75rem;
-    /* color: rgba(255 255 255/.7); */
     color: #2BB6A5;
     transition: all 800ms;
 }

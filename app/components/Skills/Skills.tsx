@@ -41,10 +41,10 @@ function Skills() {
             <span data-aos="fade-left">l</span>
             <span data-aos="fade-left">s</span>
         </h1>
-        <div className='flex flex-wrap gap-y-8 py-8 '>
+        <div className='flex justify-around max-[450px]:justify-start flex-wrap gap-y-8 py-8 '>
             {
                 images.map((item, index) =>(
-                    <div key={index} className='w-[33.33%] flex items-center gap-4 hover:rotate-3 duration-300'>
+                    <div key={index} className='w-[33.33%] max-[450px]:w-[100%] max-[600px]:w-[200px] max-[450px]:hover:bg-[#252529] rounded max-[1000px]:w-[220px] flex items-center gap-4 hover:rotate-3 duration-300'>
                         <Image 
                             src={item.picture}
                             alt={item.title}
@@ -56,9 +56,9 @@ function Skills() {
                 ))
             }
         </div>
-        <div>
+        {/* <div>
             <Animation/>
-        </div>
+        </div> */}
     </div>
   )
 }
@@ -190,7 +190,7 @@ interface ParallaxProps {
     );
   }
   
-   function Animation() {
+  export function Animation() {
     return (
       <section>
         <ParallaxText baseVelocity={-2}>Tech stack used to build this protfolio:- Next.js, TypeScript, Next UI, Tailwind CSS, React spring, Framer motion, Aos.</ParallaxText>
