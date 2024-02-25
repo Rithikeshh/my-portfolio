@@ -23,12 +23,21 @@
 .hideScrollbar::-webkit-scrollbar{
     width: 5px;
     height: 8px;
-    color: red;
     border-radius: 9999px;
     
 }
 .hideScrollbar::-webkit-scrollbar-thumb{
     background-color: #C3831D;
+    border-radius: 9999px;
+}
+.scrollbarStyle::-webkit-scrollbar{
+    width: 5px;
+    height: 8px;
+    border-radius: 9999px;
+    background-color: black;
+}
+.scrollbarStyle::-webkit-scrollbar-thumb{
+    background-color: #18181B;
     border-radius: 9999px;
 }
 @media only screen and (min-width: 1320px) {

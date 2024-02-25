@@ -67,7 +67,7 @@ function Deck() {
     api.start(i => {
       if (index !== i) return // We're only interested in changing spring-data for the current spring
       const isGone = gone.has(index)
-      const x = isGone ? (472) * dir : down ? mx : 0 // When a card is gone it flys out left or right, otherwise goes back to zero
+      const x = isGone ? (484) * dir : down ? mx : 0 // When a card is gone it flys out left or right, otherwise goes back to zero
       const rot = mx / 100 + (isGone ? dir * 10 * velocity : 0) // How much the card tilts, flicking it harder makes it rotate faster
       const scale = down ? 1.1 : 1 // Active cards lift up a bit
       return {
@@ -100,7 +100,7 @@ function Deck() {
           />
           <p className={styles.title}>
             <span>{miniProjects[i].name}</span>
-            <a href={miniProjects[i].liveUrl}>
+            <a href={miniProjects[i].liveUrl} target='_blank'>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"

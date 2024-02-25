@@ -1,0 +1,9 @@
+.contactContainer{
+    margin-top: 2rem;
+    padding-inline: 24px;
+}
+@media only screen and (min-width: 1320px) {
+    .contactContainer{
+        padding-inline: 5rem;
+    }
+}
