@@ -10,6 +10,7 @@ import { useRefAndDarkMode } from '../provider/refAndDarkMode'
 function Contact() {
     const [showConfetti, setShowConfetti] = useState<boolean>(false)
     const contactRef = useRefAndDarkMode()?.contactRef;
+    
     return (
         <div className={styles.contactContainer}>
             <h1 ref={contactRef} className='flex p-4 justify-center text-4xl font-bold text-[rgba(255,255,255,.9)] dark:text-zinc-800'>
@@ -27,7 +28,7 @@ function Contact() {
                 <div className='flex justify-around'>
 
                     <a href="mailto:rithikeshh@gmail.com" title='rithikeshh@gmail.com'>
-                        <svg viewBox="0 0 24 24" stroke="#18181B" className="h-10 w-10 dark:fill-zinc-500 transition dark:hover:fill-zinc-600 fill-zinc-400 hover:fill-zinc-300">
+                        <svg viewBox="0 0 24 24" stroke={`${localStorage.getItem("theme") ? 'white' : '#18181B'}`} className="h-10 w-10 dark:fill-zinc-500 transition dark:hover:fill-zinc-600 fill-zinc-400 hover:fill-zinc-300">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
                         </svg>
                     </a>
