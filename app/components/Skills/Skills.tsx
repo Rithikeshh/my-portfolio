@@ -28,12 +28,14 @@ import {
   useAnimationFrame
 } from "framer-motion";
 import { wrap } from "@motionone/utils";
+import { useRefAndDarkMode } from '../provider/refAndDarkMode'
 
 
 function Skills() {
+  const skillsRef = useRefAndDarkMode()?.skillsRef;
   return (
     <div className={styles.skillsContainer}>
-        <h1 className='flex p-4 justify-center text-4xl font-bold text-[rgba(255,255,255,.9)]'>
+        <h1 ref={skillsRef} className='flex p-4 justify-center text-4xl font-bold text-[rgba(255,255,255,.9)] dark:text-zinc-800'>
             <span data-aos="fade-right">S</span>
             <span data-aos="fade-right">k</span>
             <span data-aos="fade-right">i</span>
@@ -51,7 +53,7 @@ function Skills() {
                             className='rounded w-[56px] h-[56px]'
                             data-aos="flip-left"
                         />
-                        <p data-aos="flip-right" className='h-fit font-bold text-[rgba(255,255,255,.8)]'>{item.title}</p>
+                        <p data-aos="flip-right" className='h-fit font-bold text-[rgba(255,255,255,.8)] dark:text-zinc-800/80'>{item.title}</p>
                     </div>
                 ))
             }

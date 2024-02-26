@@ -53,3 +53,16 @@ body {
     transform: translateY(200vh) rotate(720deg);
   }
 }
+.loading{
+  width: 100vw;
+  height: 100vh;
+  animation: zoom 2000ms ease-in ;
+}
+@keyframes zoom {
+  from{
+    transform: rotate(0deg) scale(0);
+  }
+  to{
+    transform: rotate(900deg) scale(1.8);
+  }
+}

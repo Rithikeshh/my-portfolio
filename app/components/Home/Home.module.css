@@ -1,19 +1,6 @@
-.trailsText {
-    position: relative;
-    width: 100%;
-    color: black;
-    font-size: 1em;
-    will-change: transform, opacity;
-    overflow: hidden;
-}
 
-.trailsText > div {
-    padding-right: 0.05em;
-    overflow: hidden;
-}
   
 .container {
-    /* margin-top: 6rem; */
     padding-top: 6rem;
     display: flex;
     flex-direction: column;
@@ -26,8 +13,6 @@
     display: flex;
     gap: 2.5rem;
     position: absolute;
-    /* width: calc(100vw + 330px);
-    overflow: hidden; */
     top: 0;
     left: -330px;
 }

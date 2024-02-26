@@ -2,5 +2,5 @@
 .editor::before{
     content: attr(data-placeholder);
     display: inline;
-    color: black;
+    color: inherit;
 }

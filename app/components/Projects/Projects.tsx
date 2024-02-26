@@ -13,6 +13,7 @@ import todo from '../../assets/images/todo.png'
 import {Card, CardHeader, CardBody, CardFooter, Button, Avatar,Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure} from "@nextui-org/react";
 import Image from 'next/image';
 import CardsStack from '../CardsStack/CardsStack'
+import { useRefAndDarkMode } from '../provider/refAndDarkMode'
 
 
 const allProjects = [
@@ -108,10 +109,10 @@ const animation = [
   "zoom-in-left"
 ]
 function Projects() {
-  
+  const projectsRef = useRefAndDarkMode()?.projectsRef;
   return (
     <div className={styles.projectsContainer}>
-        <h1 className='flex p-4 justify-center text-4xl font-bold text-[rgba(255,255,255,.9)]'>
+        <h1 ref={projectsRef} className='flex p-4 justify-center text-4xl font-bold text-[rgba(255,255,255,.9)] dark:text-zinc-800'>
             <span data-aos="fade-down">P</span>
             <span data-aos="fade-up">r</span>
             <span data-aos="fade-down">o</span>
@@ -129,13 +130,13 @@ function Projects() {
               ))
             }
             <Card 
-              className="py-4 w-[300px] bg-[#252529] h-[260px]"
+              className="py-4 w-[300px] bg-[#252529] dark:bg-white h-[260px] dark:shadow-2xl"
               isFooterBlurred
               radius="lg"
               data-aos={animation[5]}
             >
               <CardHeader className="pb-0 pt-2 px-4 flex-col items-start z-[0]">
-                <p className="text-large font-bold text-[rgba(255,255,255,.9)]">Mini Projects</p>
+                <p className="text-large font-bold text-[rgba(255,255,255,.9)] dark:text-zinc-800">Mini Projects</p>
               </CardHeader>
               <div className={`${styles.hideScrollbar} overflow-y-scroll h-[158px] gap-4 p-3 rounded-xl`}>
                 
@@ -143,7 +144,7 @@ function Projects() {
                   miniProjects.map((project, index) =>(
                     <div key={index} className='mb-3 flex items-center gap-4'>
                       <Avatar isBordered color="primary" src={project.image} />
-                      <p className='font-[600] text-[rgba(255,255,255,.9)]'>{project.name}</p>
+                      <p className='font-[600] text-[rgba(255,255,255,.9)] dark:text-zinc-800'>{project.name}</p>
                       <a href={project.liveUrl} className='ml-auto' target='_blank'>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4 text-[#2BB6A5]">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
@@ -181,19 +182,19 @@ const CardContainer: React.FC<{project: {
   const [show, setShow] = useState<boolean>(false)
   return(
     <div 
-      className='relative overflow-hidden w-[300px] rounded-xl'
+      className='relative overflow-hidden w-[300px] rounded-xl dark:shadow-2xl'
       onMouseLeave={() => {setShow(false)}}
       data-aos={dataAos}
     >
       <Card 
-        className="py-4 w-[300px] bg-[#252529] h-[260px]"
+        className="py-4 w-[300px] bg-[#252529] dark:bg-white h-[260px]"
         isFooterBlurred
         radius="lg"
       >
         <CardHeader className="pb-0 pt-2 px-4 flex-col items-start z-[0]">
-          <p className="text-large font-bold text-[rgba(255,255,255,.9)]">{project.name}</p>
+          <p className="text-large font-bold text-[rgba(255,255,255,.9)] dark:text-zinc-800">{project.name}</p>
           
-          <h4 className="font-bold text-medium text-[rgba(255,255,255,.9)]">{project.techUsed}</h4>
+          <h4 className="font-bold text-medium text-[rgba(255,255,255,.9)] dark:text-zinc-800">{project.techUsed}</h4>
         </CardHeader>
         <CardBody className="overflow-visible py-2">
           <Image
