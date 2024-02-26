@@ -267,7 +267,7 @@ function MiniProjectsModal() {
        
       </div>
       <Modal backdrop={'blur'} isOpen={isOpen} onClose={onClose}>
-        <ModalContent className={`${styles.scrollbarStyle} w-[100%] bg-black`}>
+        <ModalContent className={`${styles.scrollbarStyle} w-[100%] bg-black max-[639px]:relative max-[639px]:top-[-180px]`}>
           {(onClose) => (
             <>
               <CardsStack/>
