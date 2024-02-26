@@ -13,7 +13,8 @@
 }
   
 .container {
-    margin-top: 6rem;
+    /* margin-top: 6rem; */
+    padding-top: 6rem;
     display: flex;
     flex-direction: column;
     height: 100%;

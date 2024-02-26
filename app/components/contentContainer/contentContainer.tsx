@@ -3,7 +3,7 @@ import styles from './contentContainer.module.css'
 
 function ContentContainer({children}:{children : React.ReactNode}) {
   return (
-    <div >
+    <div className='overflow-hidden'>
       <div  className={styles.container}>
         {children}
       </div>

@@ -8,22 +8,21 @@ function Header() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
+    "About",
+    "Skills",
+    "Projects",
+    "Contact",
   ];
     
   return (
     <>
+    <div className='flex justify-center '>                                                                                                                 
+      <div className='shadow-[0px_-2px_1px_1px_rgba(255,255,255,0.2)] absolute top-0 h-[65px] bg-[#18181B] w-full min-[760px]:w-[90%] min-[760px]:m-auto min-[1120px]:w-[920px] min-[1320px]:w-[1160px] '>
+
+      </div>
+    </div>
     <Navbar
-      className='bg-transparent'
+      className='bg-transparent min-[760px]:w-[90%] min-[760px]:m-auto min-[1120px]:w-[920px] min-[1320px]:w-[1160px]'
       shouldHideOnScroll
       isBordered
       isMenuOpen={isMenuOpen}
@@ -33,40 +32,40 @@ function Header() {
         <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
       </NavbarContent>
 
-      {/* <NavbarContent className="sm:hidden pr-3" justify="center"> */}
-        <NavbarBrand>
-          {/* <AcmeLogo /> */}
-          <p className="font-bold text-inherit">ACME</p>
+      
+        <NavbarBrand className='justify-center'>
+          <div className='text-[rgba(255,255,255,.9)] hover:text-[rgba(255,255,255,.7)] cursor-pointer p-4'>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+            </svg>
+          </div>
+
         </NavbarBrand>
-      {/* </NavbarContent> */}
-        {/* <Button className='rounded-full px-[28px] bg-[#252529]'> */}
+      
             <NavbarContent className="hidden sm:flex gap-4 rounded-full px-[28px] py-2 bg-[#252529] h-fit" justify="center">
-                {/* <NavbarBrand>
-                <AcmeLogo />
-                <p className="font-bold text-inherit">ACME</p>
-                </NavbarBrand> */}
+               
                 <NavbarItem>
-                <Link className='text-[rgba(255, 255, 255, 0.7)]' href="#">
+                <Link className='text-[rgba(255,255,255,.9)]' href="#">
                     About
                 </Link>
                 </NavbarItem>
                 <NavbarItem >
-                <Link className='text-[rgba(255, 255, 255, 0.7)]' href="#" >
+                <Link className='text-[rgba(255,255,255,.9)]' href="#" >
                     Skills
                 </Link>
                 </NavbarItem>
                 <NavbarItem>
-                <Link className='text-[rgba(255, 255, 255, 0.7)]' href="#">
+                <Link className='text-[rgba(255,255,255,.9)]' href="#">
                     Projects
                 </Link>
                 </NavbarItem>
                 <NavbarItem>
-                <Link className='text-[rgba(255, 255, 255, 0.7)]' href="#">
+                <Link className='text-[rgba(255,255,255,.9)]' href="#">
                     Contact
                 </Link>
                 </NavbarItem>
             </NavbarContent>
-        {/* </Button> */}
+        
 
       <NavbarContent justify="end">
         <NavbarItem>
@@ -96,163 +95,7 @@ function Header() {
         ))}
       </NavbarMenu>
     </Navbar>
-      {/* <Navbar className='bg-transparent' shouldHideOnScroll>
-      <NavbarBrand>
-        
-        <p className="font-bold text-inherit">ACME</p>
-      </NavbarBrand>
-      <Button className='rounded-full px-[28px] bg-[#252529]'>
-        <NavbarContent className="hidden sm:flex gap-4" justify="center">
-            <NavbarItem>
-            <Link href="#">
-                Features
-            </Link>
-            
-            </NavbarItem>
-            <NavbarItem isActive>
-            <Link href="#" >
-                Projects
-            </Link>
-            </NavbarItem>
-            <NavbarItem>
-            <Link  href="#">
-                Integrations
-            </Link>
-            </NavbarItem>
-        </NavbarContent>
-      </Button>
-      <NavbarContent justify="end">
-        
-      </NavbarContent>
-    </Navbar> */}
-    {/* <ul>
-        <li className='px-4'>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-    </ul> */}
+      
     </>
   )
 }
