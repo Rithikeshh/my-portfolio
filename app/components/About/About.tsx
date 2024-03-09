@@ -25,13 +25,13 @@ function About() {
                     I’m Alok Shaw. I live in Kolkata, where I design the future.
                 </h2>
                 <p data-aos="fade-left" className='mt-8 text-[rgba(255,255,255,.6)] dark:text-zinc-800/60'>
-                    I love learning and solving problems. I wrote my first program in December 2022. Afterward, I became deeply interested in programming. Upon learning the basics, I decided to join Newton School in February 2023. From there, I embarked on my journey into full-stack web development.
+                    I love learning and solving problems. I wrote my first program in December 2022. Afterward, I became deeply interested in programming. Upon learning the basics,  I explored various programming languages, frameworks, and technologies essential for building robust web applications. This journey of continuous learning has been both challenging and rewarding, fueling my passion for solving complex problems and creating innovative solutions in the realm of web development.
                 </p>
                 <p data-aos="fade-right" className='mt-8 text-[rgba(255,255,255,.6)] dark:text-zinc-800/60'>
                 I have developed several projects that have helped me improve my programming skills and learn new concepts every day. Additionally, I have gained a solid understanding of data structures and algorithms.
                 </p>
                 <p data-aos="fade-left" className='mt-8 text-[rgba(255,255,255,.6)] dark:text-zinc-800/60'>
-                I have completed a Bachelor of Science degree from the University of Calcutta with a CGPA of 7.93. My graduation year was 2023.
+                I have completed a Bachelor of Science degree from the University of Calcutta with a CGPA of 7.93.
                 </p>
             </div>
             <div className='w-[46%] max-[1020px]:w-[100%] max-[1020px]:pl-0 max-[1020px]:pb-10 pl-14 flex justify-end max-[1020px]:justify-start'>
