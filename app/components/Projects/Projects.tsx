@@ -113,14 +113,7 @@ function Projects() {
   return (
     <div className={styles.projectsContainer}>
         <h1 ref={projectsRef} className='flex p-4 justify-center text-4xl font-bold text-[rgba(255,255,255,.9)] dark:text-zinc-800'>
-            <span data-aos="fade-down">P</span>
-            <span data-aos="fade-up">r</span>
-            <span data-aos="fade-down">o</span>
-            <span data-aos="fade-up">j</span>
-            <span data-aos="fade-down">e</span>
-            <span data-aos="fade-up">c</span>
-            <span data-aos="fade-down">t</span>
-            <span data-aos="fade-up">s</span>
+            <span data-aos="fade-down">Projects</span>
         </h1>
         <div className='mt-14'>
           <div className='flex justify-around flex-wrap gap-6'>

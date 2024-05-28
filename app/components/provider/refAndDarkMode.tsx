@@ -5,6 +5,7 @@ const RefAndDarkModeContext = createContext<{
     darkMode : boolean,
     setDarkMode : Dispatch<SetStateAction<boolean>>,
     aboutRef : MutableRefObject<HTMLHeadingElement | null> , 
+    experienceRef : MutableRefObject<HTMLHeadingElement | null> , 
     skillsRef : MutableRefObject<HTMLHeadingElement | null>, 
     projectsRef : MutableRefObject<HTMLHeadingElement | null>, 
     contactRef : MutableRefObject<HTMLHeadingElement | null>
@@ -12,6 +13,7 @@ const RefAndDarkModeContext = createContext<{
 function RefAndDarkMode({children}:{children: React.ReactNode}) {
     const [darkMode, setDarkMode] = useState(true);
     const aboutRef = useRef<HTMLHeadingElement | null>(null);
+    const experienceRef = useRef<HTMLHeadingElement | null>(null);
     const skillsRef = useRef<HTMLHeadingElement | null>(null);
     const projectsRef = useRef<HTMLHeadingElement | null>(null);
     const contactRef = useRef<HTMLHeadingElement | null>(null);
@@ -19,7 +21,7 @@ function RefAndDarkMode({children}:{children: React.ReactNode}) {
   return (
 
     <RefAndDarkModeContext.Provider value={{
-        darkMode, setDarkMode, aboutRef, skillsRef, projectsRef, contactRef
+        darkMode, setDarkMode, aboutRef, experienceRef, skillsRef, projectsRef, contactRef
     }}>
         {children}
     </RefAndDarkModeContext.Provider>

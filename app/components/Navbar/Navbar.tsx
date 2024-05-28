@@ -6,6 +6,7 @@ import { useRefAndDarkMode } from '../provider/refAndDarkMode';
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const aboutRef = useRefAndDarkMode()?.aboutRef;
+  const experienceRef = useRefAndDarkMode()?.experienceRef;
   const skillsRef = useRefAndDarkMode()?.skillsRef;
   const projectsRef = useRefAndDarkMode()?.projectsRef;
   const contactRef = useRefAndDarkMode()?.contactRef;
@@ -13,6 +14,7 @@ function Header() {
   const setDarkMode = useRefAndDarkMode()?.setDarkMode;;
   const menuItems = [
     { section: "About", scrollTo: aboutRef },
+    { section: "Experience", scrollTo: experienceRef },
     { section: "Skills", scrollTo: skillsRef },
     { section: "Projects", scrollTo: projectsRef },
     { section: "Contact", scrollTo: contactRef },

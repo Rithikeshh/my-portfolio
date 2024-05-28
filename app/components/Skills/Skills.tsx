@@ -36,12 +36,7 @@ function Skills() {
   return (
     <div className={styles.skillsContainer}>
         <h1 ref={skillsRef} className='flex p-4 justify-center text-4xl font-bold text-[rgba(255,255,255,.9)] dark:text-zinc-800'>
-            <span data-aos="fade-right">S</span>
-            <span data-aos="fade-right">k</span>
-            <span data-aos="fade-right">i</span>
-            <span data-aos="fade-left">l</span>
-            <span data-aos="fade-left">l</span>
-            <span data-aos="fade-left">s</span>
+            <span data-aos="fade-down">Skills</span>
         </h1>
         <div className='flex justify-around max-[450px]:justify-start flex-wrap gap-y-8 py-8 '>
             {
@@ -50,7 +45,7 @@ function Skills() {
                         <Image 
                             src={item.picture}
                             alt={item.title}
-                            className='rounded w-[56px] h-[56px]'
+                            className='rounded w-[56px] h-[56px] dark:shadow-md'
                             data-aos="flip-left"
                         />
                         <p data-aos="flip-right" className='h-fit font-bold text-[rgba(255,255,255,.8)] dark:text-zinc-800/80'>{item.title}</p>

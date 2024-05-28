@@ -14,14 +14,7 @@ function Contact() {
     return (
         <div className={styles.contactContainer}>
             <h1 ref={contactRef} className='flex p-4 justify-center text-4xl font-bold text-[rgba(255,255,255,.9)] dark:text-zinc-800'>
-                <span data-aos="fade-down">C</span>
-                <span data-aos="fade-up">o</span>
-                <span data-aos="fade-down">n</span>
-                <span data-aos="fade-up">t</span>
-                <span data-aos="fade-down">a</span>
-                <span data-aos="fade-up">c</span>
-                <span data-aos="fade-down">t</span>
-
+                <span data-aos="fade-down">Contact</span>
             </h1>
             <div className=''>
                 <ContactForm />

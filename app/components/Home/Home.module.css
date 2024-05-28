@@ -16,6 +16,20 @@
     top: 0;
     left: -330px;
 }
+.roll{
+    position: relative;
+    color: red;
+    animation-duration: 2s;
+    animation-name: roll;
+}
+@keyframes roll {
+    0%{
+        top: 40px;
+    }
+    100%{
+        top: 0px;
+    }
+}
 @media only screen and (min-width: 1320px) {
     .container{
         padding-inline-start: 5rem;

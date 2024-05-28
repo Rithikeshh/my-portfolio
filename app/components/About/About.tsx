@@ -12,11 +12,7 @@ function About() {
   return (
     <div className={styles.aboutContainer}>
         <h1 ref={aboutRef} className='flex p-4 justify-center text-4xl font-bold text-[rgba(255,255,255,.9)] dark:text-zinc-800'>
-            <span data-aos="fade-up-right">A</span>
-            <span data-aos="fade-down-right">b</span>
-            <span data-aos="fade-up">o</span>
-            <span data-aos="fade-up-left">u</span>
-            <span data-aos="fade-down-left">t</span>
+            <span data-aos="fade-down">About</span>
         </h1>
         <div className={styles.aboutContentAndImageContainer}>
 

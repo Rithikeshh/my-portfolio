@@ -9,6 +9,7 @@ import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 import ContentContainer from "./components/contentContainer/contentContainer";
 import { useEffect, useState } from "react";
+import Experience from "./components/Experience/Experience";
 
 export default function Page() {
   const[loading, setLoading] = useState(true);
@@ -36,6 +37,7 @@ export default function Page() {
         
         <Home/>
         <About/>
+        <Experience/>
         <Skills/>
         <Projects/>
         <Contact/>

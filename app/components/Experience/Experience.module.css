@@ -1,0 +1,33 @@
+.experienceContainer{
+    margin-top: 2rem;
+    padding-inline: 24px;
+}
+.pipe::after{
+    content: '';
+    background-color: #2BB6A5;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    top: -3px;
+    left: -4px;
+    
+}
+.pipe::before{
+    content: '';
+    background-color: #2BB6A5;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: -4px;
+    
+}
+@media only screen and (min-width: 1320px) {
+    .experienceContainer{
+        padding-inline: 5rem;
+    }
+}
