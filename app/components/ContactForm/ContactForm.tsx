@@ -2,9 +2,9 @@
 import emailjs from "@emailjs/browser";
 import styles from './ContactForm.module.css'
 import profileImage2 from '../../assets/images/profileImage2.jpeg'
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@nextui-org/react";
-export default function ContactForm() {
+export default function ContactForm({location}:{location: {latitude: number, longitude: number} | null}) {
 
   const messageRef = useRef<HTMLDivElement | null>(null)
   const [isMessageSent, setIsMessageSent] = useState(false)
@@ -13,12 +13,16 @@ export default function ContactForm() {
     to_name: "Alok Shaw",
     reply_to: "",
     message: "",
+    latitude: location?.latitude,
+    longitude: location?.longitude
   };
   const [form, setForm] = useState<{
     from_name: string;
     to_name: string;
     reply_to: string;
     message: string;
+    latitude: number|undefined;
+    longitude: number|undefined;
   }>(intEmail);
 
   const handleMessage = (e: any) => {
@@ -29,8 +33,16 @@ export default function ContactForm() {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
   };
-
-  const sendEmail = (e: any) => {
+  useEffect(()=>{
+    if(location){
+      setForm((form)=>{
+        return {...form,latitude:location?.latitude,longitude:location?.longitude}
+      })
+    }
+    sendEmail();
+  },[location, form.latitude])
+  const sendEmail = (e?: any) => {
+    if(e)
     e.preventDefault();
 
     emailjs

@@ -11,16 +11,36 @@ import ContentContainer from "./components/contentContainer/contentContainer";
 import { useEffect, useState } from "react";
 import Experience from "./components/Experience/Experience";
 
+interface Location {
+  latitude: number;
+  longitude: number;
+}
 export default function Page() {
   const[loading, setLoading] = useState(true);
+  const [location, setLocation] = useState<Location | null>(null);
   useEffect(()=>{
     if(localStorage.getItem("theme")){
       document.documentElement.classList.add("dark")
     }
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setLocation({
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
+          });
+        },
+        (error) => {
+          
+        }
+      );
+    } else {
+      console.log('Geolocation is not supported by this browser.');
+    }
     setTimeout(() => {setLoading(false)},1000)
     
   },[])
-  return (
+    return (
     loading ? 
     <div className="w-[100vw] h-[100vh] bg-black flex justify-center items-center overflow-hidden">
       <Image 
@@ -40,7 +60,7 @@ export default function Page() {
         <Experience/>
         <Skills/>
         <Projects/>
-        <Contact/>
+        <Contact location={location}/>
         <Footer/>
         
       </ContentContainer>

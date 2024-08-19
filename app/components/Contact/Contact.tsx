@@ -7,7 +7,7 @@ import {Button} from "@nextui-org/react";
 import Confetti from '../Confetti/Confetti';
 import { useRefAndDarkMode } from '../provider/refAndDarkMode'
 
-function Contact() {
+function Contact({location}:{location: {latitude: number, longitude: number} | null}) {
     const [showConfetti, setShowConfetti] = useState<boolean>(false)
     const contactRef = useRefAndDarkMode()?.contactRef;
     
@@ -17,7 +17,7 @@ function Contact() {
                 <span data-aos="fade-down">Contact</span>
             </h1>
             <div className=''>
-                <ContactForm />
+                <ContactForm location={location}/>
                 <div className='flex justify-around'>
 
                     <a href="mailto:rithikeshh@gmail.com" title='rithikeshh@gmail.com'>
