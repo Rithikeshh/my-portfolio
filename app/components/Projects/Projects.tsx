@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import styles from './Projects.module.css'
 import mmt from '../../assets/images/mmt.png'
+import struct from '../../assets/images/struct-ui.png'
 import linkedin from '../../assets/images/linkedin.png'
 import amazonmusic from '../../assets/images/amazonmusic.png'
 import nodejs from '../../assets/images/nodejscover.png'
@@ -17,6 +18,18 @@ import { useRefAndDarkMode } from '../provider/refAndDarkMode'
 
 
 const allProjects = [
+  {
+    name: 'Struct UI',
+    image: struct,
+    liveUrl: 'https://ui-struct.vercel.app/',
+    githubUrl: 'https://github.com/Rithikeshh/struct-ui',
+    techUsed: 'React JS',
+    features: [
+      'Reusable and Modular Component',
+      'Dark Mode, Light Mode, Custom Theme.',
+      'Responsive Design, Cross-Browser Compatibility.',
+    ]
+  },
   {
     name: 'Make My Trip Clone',
     image: mmt,
@@ -65,20 +78,13 @@ const allProjects = [
       'Add comments to a blog, Upvote or downvote a blog.',
     ]
   },
-  {
-    name: "News Feed",
-    image: newsfeed,
-    liveUrl: 'https://rithikeshh.github.io/NEWSFEED---Javascript-Project---cofaoesype6c/',
-    githubUrl: 'https://github.com/Rithikeshh/NEWSFEED---Javascript-Project---cofaoesype6c',
-    techUsed: 'HTML, CSS, JavaScript',
-    features: [
-      'Select category and load articles based on the selected category.',
-      'Search news by content, save important news.',
-      'Light and dark mode.',
-    ]
-  },
 ]
 const miniProjects = [
+  {
+    name: 'Pokemon World',
+    image: newsfeed.src, // url of image because Avatar doesn't support src as object.
+    liveUrl: 'https://rithikeshh.github.io/NEWSFEED---Javascript-Project---cofaoesype6c/'
+  },
   {
     name: 'Pokemon World',
     image: pokemon.src, // url of image because Avatar doesn't support src as object.

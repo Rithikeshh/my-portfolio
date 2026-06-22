@@ -1,7 +1,9 @@
 'use client'
-import React, { MutableRefObject, useEffect, useState } from 'react'
-import { Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenuItem, NavbarMenu, NavbarContent, NavbarItem, Link, Button } from "@nextui-org/react";
+import React, { MutableRefObject, useEffect } from 'react'
+import { Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenuItem, NavbarMenu, NavbarContent, NavbarItem, Button } from "@nextui-org/react";
 import { useRefAndDarkMode } from '../provider/refAndDarkMode';
+
+const resume = '/Alok_Shaw_Resume_06_06.pdf';
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -10,14 +12,15 @@ function Header() {
   const skillsRef = useRefAndDarkMode()?.skillsRef;
   const projectsRef = useRefAndDarkMode()?.projectsRef;
   const contactRef = useRefAndDarkMode()?.contactRef;
-  const darkMode = useRefAndDarkMode()?.darkMode;;
-  const setDarkMode = useRefAndDarkMode()?.setDarkMode;;
+  const darkMode = useRefAndDarkMode()?.darkMode;
+  const setDarkMode = useRefAndDarkMode()?.setDarkMode;
   const menuItems = [
     { section: "About", scrollTo: aboutRef },
     { section: "Experience", scrollTo: experienceRef },
     { section: "Skills", scrollTo: skillsRef },
     { section: "Projects", scrollTo: projectsRef },
     { section: "Contact", scrollTo: contactRef },
+    { section: "Download CV", scrollTo: undefined },
   ];
 
   function handleScroll(sectionRef: MutableRefObject<HTMLHeadingElement | null> | undefined) {
@@ -78,14 +81,20 @@ function Header() {
         <NavbarContent className="hidden sm:flex gap-4 rounded-full px-[28px] py-2 bg-[#252529] dark:bg-white dark:shadow h-fit" justify="center">
           {menuItems.map((item, index) => (
             <NavbarItem key={index}>
-              <button
-                className='text-[rgba(255,255,255,.9)] dark:text-zinc-800'
-                onClick={() => {
-                  handleScroll(item.scrollTo)
-                }}
-              >
-                {item.section}
-              </button>
+              {item.scrollTo ? 
+                <button
+                  className='text-[rgba(255,255,255,.9)] dark:text-zinc-800'
+                  onClick={() => {
+                    handleScroll(item.scrollTo)
+                  }}
+                >
+                  {item.section}
+                </button> 
+                :
+                <a className='text-[rgba(255,255,255,.9)] dark:text-zinc-800' href={resume} download>
+                  {item.section}
+                </a>
+              }
             </NavbarItem>
           ))}
         </NavbarContent>
@@ -113,17 +122,23 @@ function Header() {
         <NavbarMenu className='bg-transparent'>
           {menuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
-              <button
-                className="w-full text-[rgba(255, 255, 255, 0.7)] dark:text-zinc-800/90 text-start"
-                onClick={() => {
-                  setTimeout(() => {
-                    handleScroll(item.scrollTo)
-                  }, 0)
-                  setIsMenuOpen(false)
-                }}
-              >
-                {item.section}
-              </button>
+              {item.scrollTo ?
+                <button
+                  className="w-full text-[rgba(255, 255, 255, 0.7)] dark:text-zinc-800/90 text-start"
+                  onClick={() => {
+                    setTimeout(() => {
+                      handleScroll(item.scrollTo)
+                    }, 0)
+                    setIsMenuOpen(false)
+                  }}
+                >
+                  {item.section}
+                </button>
+                :
+                <a className="w-full text-[rgba(255, 255, 255, 0.7)] dark:text-zinc-800/90 text-start" href={resume} download onClick={() => setIsMenuOpen(false)}>
+                  {item.section}
+                </a>
+              }
             </NavbarMenuItem>
           ))}
         </NavbarMenu>

@@ -15,7 +15,7 @@ import tailwind from '../../assets/images/tailwind.png'
 import git from '../../assets/images/Git-Icon-1788C.png'
 import material from '../../assets/images/material.png'
 import redux from '../../assets/images/redux.png'
-import more from '../../assets/images/more.png'
+import angular from '../../assets/images/angular.svg'
 import Image from 'next/image'
 import { useRef } from "react";
 import {
@@ -41,12 +41,15 @@ function Skills() {
         <div className='flex justify-around max-[450px]:justify-start flex-wrap gap-y-8 py-8 '>
             {
                 images.map((item, index) =>(
-                    <div key={index} className='w-[33.33%] max-[450px]:w-[100%] max-[600px]:w-[200px] max-[450px]:hover:bg-[#252529] rounded max-[1000px]:w-[220px] flex items-center gap-4 hover:rotate-3 duration-300'>
+                    <div key={index} className='w-[33.33%] max-[450px]:w-[100%] max-[600px]:w-[200px] max-[450px]:hover:bg-[#252529] rounded max-[1000px]:w-[220px] flex items-center gap-4 duration-300'>
                         <Image 
                             src={item.picture}
                             alt={item.title}
-                            className='rounded w-[56px] h-[56px] dark:shadow-md'
+                            className='w-[42px] h-[42px] dark:shadow-md'
+                            style={{ borderRadius: '50%' }}
                             data-aos="flip-left"
+                            width={42}
+                            height={42}
                         />
                         <p data-aos="flip-right" className='h-fit font-bold text-[rgba(255,255,255,.8)] dark:text-zinc-800/80'>{item.title}</p>
                     </div>
@@ -84,6 +87,10 @@ const images = [
         picture: next
     },
     {
+        title: 'Angular',
+        picture: angular
+    },
+    {
         title: 'Node JS',
         picture: node
     },
@@ -95,14 +102,10 @@ const images = [
         title: 'MongoDB',
         picture: mongodb
     },
-    {
-        title: 'DSA',
-        picture: dsa
-    },
-    {
-        title: 'Java',
-        picture: java
-    },
+    // {
+    //     title: 'Java',
+    //     picture: java
+    // },
     {
         title: 'GIT',
         picture: git
@@ -112,17 +115,9 @@ const images = [
         picture: tailwind
     },
     {
-        title: 'Material UI',
-        picture: material
-    },
-    {
         title: 'Redux',
         picture: redux
-    },
-    {
-        title: 'More libraries...',
-        picture: more
-    },
+    }
 ]
 
 interface ParallaxProps {
