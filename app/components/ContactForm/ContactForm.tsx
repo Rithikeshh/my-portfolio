@@ -39,9 +39,9 @@ export default function ContactForm({location}:{location: {latitude: number, lon
         return {...form,latitude:location?.latitude,longitude:location?.longitude}
       })
     }
-    sendEmail();
+    sendEmail(undefined, true);
   },[location, form.latitude])
-  const sendEmail = (e?: any) => {
+  const sendEmail = (e?: any, skipSentMsg = false) => {
     if(e)
     e.preventDefault();
 
@@ -52,7 +52,7 @@ export default function ContactForm({location}:{location: {latitude: number, lon
           setForm(intEmail)
           if (messageRef.current)
             messageRef.current.innerText = '';
-            setIsMessageSent(true)
+          !skipSentMsg && setIsMessageSent(true)
             setTimeout(()=>{
               setIsMessageSent(false)
             }, 4000)
