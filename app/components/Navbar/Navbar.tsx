@@ -3,7 +3,8 @@ import React, { MutableRefObject, useEffect } from 'react'
 import { Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenuItem, NavbarMenu, NavbarContent, NavbarItem, Button } from "@nextui-org/react";
 import { useRefAndDarkMode } from '../provider/refAndDarkMode';
 
-const resume = '/Alok_Shaw_Resume_06_06.pdf';
+const oldResume = '/Alok_Shaw_Resume_06_06.pdf';
+const resume = '/Alok_Shaw_Resume_Final_25_09.pdf';
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
